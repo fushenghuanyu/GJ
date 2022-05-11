@@ -141,6 +141,5 @@ def find_box_under_footer_passageway():
     first_check = find_box_in_area_color(box_under_footer_area_passageway, weather_code)
     if not first_check:
         return False
-        find_box_in_area_color(box_under_footer_area_passageway, weather_code)
     find_box_in_area_color(box_under_footer_area_passageway, weather_code)
     return True
