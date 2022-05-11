@@ -3,7 +3,7 @@ from email.mime.text import MIMEText
 
 import log_message
 
-receive_addr = ""
+receive_addr = "xinhaitest111@163.com"
 
 
 def send_message(message):

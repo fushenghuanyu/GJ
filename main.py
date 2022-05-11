@@ -29,13 +29,10 @@ for i in range(0, 100):
     if not open_map_count:
         role_action.try_reset()
         continue
-    time1 = time.time()
-    open_box_count_passageway = role_action.prepare_to_find() 
-    if not open_box_count_passageway:
+    if not role_action.prepare_to_find():
         role_action.try_reset()
         continue
-    time2 = time.time()
-    open_box_count = role_action.find_boxs()
+    open_box_count = role_action.find_boxs()    
     if not open_box_count:
         role_action.try_reset()
         continue
@@ -50,10 +47,7 @@ for i in range(0, 100):
     report_data = {
         '当前时间':time_now,
         '开图数量':open_map_count,
-        '走廊开盒数量':open_box_count_passageway-1,
-        '走廊开盒耗时':time2 - time1,
-        '城镇外开盒数量':open_box_count-1,
-        '总开盒数量':open_box_count_passageway+open_box_count-2,
+        '开盒数量':open_box_count,
         '丢图数量':clear_map_count
     }
     role_action.send_message_briefing(report_data,i+1)
