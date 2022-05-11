@@ -14,10 +14,10 @@ night_tip = cv2.imread('img/night_tip.png')
 rain_tip = cv2.imread('img/rain_tip.png')
 
 # 脚下可开盒子区域
-box_under_footer_area = [710, 580, 400, 250]
+box_under_footer_area = [760, 580, 400, 250]
 
 #走廊脚下可开盒子区域
-box_under_footer_area_passageway = [710, 580, 230, 200]
+box_under_footer_area_passageway = [840, 580, 240, 200]
 
 # 脚下中心点
 footer_pos = [960, 635]
@@ -141,5 +141,15 @@ def find_box_under_footer_passageway():
     first_check = find_box_in_area_color(box_under_footer_area_passageway, weather_code)
     if not first_check:
         return False
+    image = cv2.cvtColor(np.asarray(pyautogui.screenshot(region=too_far_area)), cv2.COLOR_RGB2BGR)
+    match_res = cv2.matchTemplate(image, too_far_tip, 3)
+    min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(match_res)
+    # print(max_val)
+    if max_val > 0.9:
+        pos = pyautogui.position()
+        # print(pos)
+        if pos[1] - footer_pos[1] > 70:
+            role_move.move(0, -0.4)
+        find_box_in_area_color(box_under_footer_area, weather_code)
     find_box_in_area_color(box_under_footer_area_passageway, weather_code)
     return True
