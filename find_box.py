@@ -115,7 +115,7 @@ def find_box_under_footer():
             role_move.move(2, 0)
         if pos[0] - footer_pos[0] < -100:
             role_move.move(-2, 0)
-        if pos[1] - footer_pos[1] > 100:
+        if pos[1] - footer_pos[1] > 70:
             role_move.move(0, -0.4)
         find_box_in_area_color(box_under_footer_area, weather_code)
     find_box_in_area_color(box_under_footer_area, weather_code)
