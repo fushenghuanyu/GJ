@@ -290,7 +290,7 @@ def reset_to_store():
         return False
     pyautogui.moveTo(max_loc[0] + 30, max_loc[1] + 15)
     pyautogui.leftClick()
-    pyautogui.sleep(30)
+    pyautogui.sleep(60)
 
     reset_visual_field()
 
