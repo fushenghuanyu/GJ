@@ -43,7 +43,7 @@ wait_open_time1 = 131
 # 打开藏宝图等待时间（50张）
 wait_open_time2 = 163
 # 藏宝图探查吟唱时间减少
-decreased_percent = 0.35
+decreased_percent = 0.4
 
 # 开始挖宝的坐标方向和大小
 begin_find_loc_1 = [-825, -540]
@@ -121,10 +121,10 @@ def buy_map():
     pyautogui.keyUp('shift')
     max_val, max_loc = match_img(buy_map_tip)
     if max_val > 0.9:
-        pyautogui.press('3')
-        pyautogui.press('9')
+        pyautogui.press('4')
+        pyautogui.press('1')
         pyautogui.press('enter')
-        pyautogui.click(x=None, y=None, clicks=11, interval=0.001, button='right', duration=0.0, tween=pyautogui.linear)
+        pyautogui.click(x=None, y=None, clicks=9, interval=0.001, button='right', duration=0.0, tween=pyautogui.linear)
         # max_val, max_loc = match_img(confirm_btn)
         # if max_val > 0.9:
         #     pyautogui.moveTo(max_loc[0] + 50, max_loc[1] + 15)
