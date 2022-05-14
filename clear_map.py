@@ -7,13 +7,17 @@ import role_action
 import role_move
 import math
 
+
 open_map_error = cv2.imread('img/open_map_error.png')
 gold = cv2.imread('img/gold.png')
 gold_800 = cv2.imread('img/gold_800.png')
 
 
 
-time.sleep(1)
+
+time.sleep(0.5)
+# role_action.reset_visual_field()
 role_action.clear_map()
+role_action.buy_map()
 
 
