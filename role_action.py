@@ -62,6 +62,9 @@ bag_width = 12
 # 家园走到门口的位移距离
 home_to_door = [-4, -1]
 
+# 复活至龙星阵的具体坐标
+resurrect_loc = [970,800]
+
 
 def match_img(template):
     image = cv2.cvtColor(np.asarray(pyautogui.screenshot()), cv2.COLOR_RGB2BGR)
@@ -408,7 +411,7 @@ def send_message_briefing(message:list,index = 0):
     
 def resurrect(count = 3):
     for i in range(0,count):
-        pyautogui.moveTo(970,800)
+        pyautogui.moveTo(resurrect_loc[0],resurrect_loc[1])
         pyautogui.leftClick()
         time.sleep(3)
         max_val, max_loc = match_img(isdead)
