@@ -214,17 +214,17 @@ def prepare_to_find():
 
 def find_boxs():
     count = 0
-    # role_move.move_to(begin_find_loc_1, None, 1, 5)
-    # role_move.turn_to(begin_find_direct_1)
-    # count += role_move.move_map(find_area_1[0], find_area_1[1], find_box.find_box_under_footer)
-    # role_move.move_to(begin_find_loc_2, None, 1, 5)
-    # role_move.turn_to(begin_find_direct_2)
-    # count += role_move.move_map(find_area_2[0], find_area_2[1], find_box.find_box_under_footer)
-    # role_move.move_to([-850, -560], None, 5, 3)
-    # print("开盒次数" + str(count))
-    # if count <= 0:
-    #     reset_keys()
-    #     send_message_with_loc("Find No Box")
+    role_move.move_to(begin_find_loc_1, None, 1, 5)
+    role_move.turn_to(begin_find_direct_1)
+    count += role_move.move_map(find_area_1[0], find_area_1[1], find_box.find_box_under_footer)
+    role_move.move_to(begin_find_loc_2, None, 1, 5)
+    role_move.turn_to(begin_find_direct_2)
+    count += role_move.move_map(find_area_2[0], find_area_2[1], find_box.find_box_under_footer)
+    role_move.move_to([-850, -560], None, 5, 3)
+    print("开盒次数" + str(count))
+    if count <= 0:
+        reset_keys()
+        send_message_with_loc("Find No Box")
     max_val, max_loc = match_img(isdead)
     if max_val > 0.95:
         time.sleep(15)
