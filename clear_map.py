@@ -16,8 +16,8 @@ gold_800 = cv2.imread('img/gold_800.png')
 
 
 time.sleep(0.5)
-# role_action.reset_visual_field()
+# role_action.reset_to_store()
 role_action.clear_map()
-role_action.buy_map()
+# role_action.buy_map()
 
 

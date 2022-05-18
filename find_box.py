@@ -14,7 +14,7 @@ night_tip = cv2.imread('img/night_tip.png')
 rain_tip = cv2.imread('img/rain_tip.png')
 
 # 脚下可开盒子区域
-box_under_footer_area = [760, 580, 400, 250]
+box_under_footer_area = [710, 580, 400, 250]
 
 
 # 脚下中心点
